@@ -12,9 +12,6 @@ import sys
 sys.path.append('.')
 
 # 导入我们的模块
-from text_editing_environment import TextEditingEnv
-from cursor_control_agent import PPOAgent, TextEncoder, CursorControlHead
-from task_generator_rewards import TaskGenerator
 from cursor_control_agent import PPOAgent, TextEncoder, CursorControlHead
 from task_generator_rewards import TaskGenerator, TextEditingEnvWithTasks
 
