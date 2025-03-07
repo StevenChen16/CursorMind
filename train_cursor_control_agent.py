@@ -34,6 +34,9 @@ def parse_args():
     parser.add_argument('--render', action='store_true', help='是否渲染环境')
     parser.add_argument('--eval-episodes', type=int, default=10, help='评估的回合数')
     parser.add_argument('--gpt2-path', type=str, default='E:\\ML\\example\\nlp\\GPT-2', help='GPT-2模型路径')
+    parser.add_argument('--training-phase', type=int, default=1, choices=[1, 2], help='训练阶段: 1=基础光标移动, 2=完整功能')
+    parser.add_argument('--phase-switch-episode', type=int, default=2000, help='切换到阶段2的回合数(仅当starting-phase=1时有效)')
+    return parser.parse_args()
     return parser.parse_args()
 
 def train_agent(args):
@@ -42,11 +45,14 @@ def train_agent(args):
     task_generator = TaskGenerator()
     env = TextEditingEnvWithTasks(task_generator, max_steps=args.max_steps)
     
+    # 设置初始训练阶段
+    task_generator.set_training_phase(args.training_phase)
+    
     print("初始化代理...")
     # agent = PPOAgent(
     agent = GRPOAgent(
         env=env,
-        text_embedding_dim=768,  # GPT-2隐藏维度
+        text_embedding_dim=768,
         hidden_dim=256,
         gamma=args.gamma,
         clip_ratio=args.clip_ratio,
@@ -60,12 +66,49 @@ def train_agent(args):
         agent.policy.load_state_dict(torch.load(args.load_model))
     
     print(f"开始训练，共{args.num_episodes}个回合...")
-    rewards = agent.train(
-        num_episodes=args.num_episodes,
-        max_steps=args.max_steps,
-        update_frequency=args.update_frequency,
-        render=args.render
-    )
+    rewards = []
+    
+    for episode in tqdm(range(args.num_episodes)):
+        # 检查是否需要切换训练阶段
+        if args.training_phase == 1 and episode == args.phase_switch_episode:
+            print(f"\n切换到训练阶段2（完整功能）...")
+            task_generator.set_training_phase(2)
+            
+            # 可选：保存阶段1完成时的检查点
+            phase1_model_path = args.save_model.replace('.pt', '_phase1.pt')
+            print(f"保存阶段1模型到: {phase1_model_path}")
+            torch.save(agent.policy.state_dict(), phase1_model_path)
+        
+        # 现有的训练代码...
+        obs = env.reset()
+        episode_reward = 0
+        done = False
+        step = 0
+        
+        while not done and step < args.max_steps:
+            action = agent.select_action(obs)
+            next_obs, reward, done, _ = env.step(action)
+            
+            # 存储奖励和结束状态
+            if isinstance(agent, GRPOAgent):  # 如果使用GRPO代理
+                agent.store_reward(reward, done)
+            
+            obs = next_obs
+            episode_reward += reward
+            step += 1
+            
+            if args.render:
+                env.render()
+        
+        # 记录本回合奖励
+        rewards.append(episode_reward)
+        
+        # 定期更新策略
+        if (episode + 1) % args.update_frequency == 0:
+            agent.update()
+            # 打印当前进度
+            avg_reward = np.mean(rewards[-args.update_frequency:])
+            print(f"Episode {episode+1}/{args.num_episodes}, Avg Reward: {avg_reward:.2f}")
     
     # 保存模型
     print(f"保存模型到: {args.save_model}")
@@ -81,6 +124,7 @@ def train_agent(args):
     plt.show()
     
     return agent
+
 
 def test_agent(args):
     """测试代理性能"""
@@ -265,7 +309,7 @@ def interactive_demo(args):
         
         # 更新环境渲染
         env.render(mode="human")
-        clock.tick(5)  # 控制速度，每秒5帧
+        # clock.tick(5)  # 控制速度，每秒5帧
     
     env.close()
     print("演示结束")
