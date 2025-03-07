@@ -12,7 +12,7 @@ import sys
 sys.path.append('.')
 
 # 导入我们的模块
-from cursor_control_agent import PPOAgent, TextEncoder, CursorControlHead
+from cursor_control_agent import PPOAgent, GRPOAgent, TextEncoder, CursorControlHead
 from task_generator_rewards import TaskGenerator, TextEditingEnvWithTasks
 
 def parse_args():
@@ -43,7 +43,8 @@ def train_agent(args):
     env = TextEditingEnvWithTasks(task_generator, max_steps=args.max_steps)
     
     print("初始化代理...")
-    agent = PPOAgent(
+    # agent = PPOAgent(
+    agent = GRPOAgent(
         env=env,
         text_embedding_dim=768,  # GPT-2隐藏维度
         hidden_dim=256,
@@ -88,7 +89,8 @@ def test_agent(args):
     env = TextEditingEnvWithTasks(task_generator, max_steps=args.max_steps)
     
     print("初始化代理...")
-    agent = PPOAgent(
+    # agent = PPOAgent(
+    agent = GRPOAgent(
         env=env,
         text_embedding_dim=768,  # GPT-2隐藏维度
         hidden_dim=256,
@@ -144,7 +146,8 @@ def interactive_demo(args):
     env = TextEditingEnvWithTasks(task_generator, max_steps=args.max_steps)
     
     print("初始化代理...")
-    agent = PPOAgent(
+    # agent = PPOAgent(
+    agent = GRPOAgent(
         env=env,
         text_embedding_dim=768,  # GPT-2隐藏维度
         hidden_dim=256,

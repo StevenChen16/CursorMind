@@ -564,3 +564,384 @@ class PPOAgent:
             print(f"测试回合 {episode+1}/{num_episodes}, 奖励: {episode_reward:.2f}")
         
         return rewards
+
+class GRPOAgent:
+    """使用GRPO算法的文本编辑代理"""
+    
+    def __init__(self, env, text_embedding_dim=64, hidden_dim=128, gamma=0.99, 
+                 clip_ratio=0.2, lr=3e-4, group_size=16, kl_coef=0.01,
+                 use_gpt2=True, gpt2_path=None, ref_policy=None):
+        self.env = env
+        self.gamma = gamma
+        self.clip_ratio = clip_ratio
+        self.kl_coef = kl_coef  # KL散度系数
+        self.group_size = group_size  # 每组的样本数
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print(f"使用设备: {self.device}")
+        
+        # 状态和动作空间
+        self.num_actions = env.action_space.n
+        
+        # 确定是否使用GPT-2作为文本编码器
+        self.use_gpt2 = use_gpt2 and gpt2_path is not None
+        
+        if self.use_gpt2:
+            try:
+                device = self.device
+                from transformers import AutoModelForCausalLM, AutoTokenizer
+                self.tokenizer = AutoTokenizer.from_pretrained(gpt2_path)
+                
+                # 设置pad token为eos token
+                self.tokenizer.pad_token = self.tokenizer.eos_token
+                
+                self.gpt2_model = AutoModelForCausalLM.from_pretrained(gpt2_path)
+                self.gpt2_model.to(device)
+                self.gpt2_model.eval()
+                self.text_encoder = GPT2TextEncoder(self.tokenizer, self.gpt2_model)
+                print(f"GPT-2模型成功加载: {gpt2_path}")
+            except Exception as e:
+                print(f"加载GPT-2模型失败: {e}")
+                print("将使用基本文本编码器")
+                self.use_gpt2 = False
+        
+        if not self.use_gpt2:
+            self.text_encoder = TextEncoder(vocab_size=128, embedding_dim=text_embedding_dim, device=self.device)
+            text_embedding_dim = self.text_encoder.embedding_dim
+        
+        # 策略网络：文本嵌入 + 光标位置 + 当前任务 -> 动作分布
+        input_dim = text_embedding_dim + 2 + 3  # 文本嵌入 + 光标(x,y) + 任务类型(one-hot)
+        self.policy = nn.Sequential(
+            CursorControlHead(input_dim, hidden_dim, self.num_actions)
+        ).to(self.device)
+        
+        # 参考策略（用于KL散度）
+        self.ref_policy = ref_policy if ref_policy is not None else self.policy
+        
+        # 优化器
+        self.optimizer = optim.Adam(self.policy.parameters(), lr=lr)
+        
+        # 经验回放缓冲区 - 修改为组结构
+        self.groups = []  # 每个元素是一个包含组内样本的字典
+    
+    def _process_observation(self, obs):
+        """处理观察，转换为模型输入"""
+        # 与PPOAgent相同的处理逻辑
+        if isinstance(obs, dict) and "text" in obs:
+            text = obs["text"]
+        else:
+            text = str(obs)
+            
+        if isinstance(obs, dict):
+            if "cursor_x" in obs and "cursor_y" in obs:
+                cursor_x = obs["cursor_x"]
+                cursor_y = obs["cursor_y"]
+            elif "cursor_pos" in obs:
+                cursor_pos = obs["cursor_pos"]
+                if isinstance(cursor_pos, (list, tuple)) and len(cursor_pos) >= 2:
+                    cursor_x, cursor_y = cursor_pos[0], cursor_pos[1]
+                else:
+                    cursor_x, cursor_y = 0, 0
+            elif "cursor" in obs:
+                cursor = obs["cursor"]
+                if isinstance(cursor, (list, tuple)) and len(cursor) >= 2:
+                    cursor_x, cursor_y = cursor[0], cursor[1]
+                else:
+                    cursor_x, cursor_y = 0, 0
+            else:
+                cursor_x, cursor_y = 0, 0
+        else:
+            cursor_x, cursor_y = 0, 0
+            
+        if isinstance(obs, dict):
+            task_type = obs.get("task_type", [0,0,0])
+        else:
+            task_type = [0,0,0]
+        
+        if self.use_gpt2:
+            with torch.no_grad():
+                text_embedding = self.text_encoder.get_embeddings(text=text)
+        else:
+            text_indices = self.text_encoder.encode_text(text)
+            text_embedding = self.text_encoder.get_embeddings(text_indices)
+            text_embedding = torch.mean(text_embedding, dim=0, keepdim=True)
+        
+        cursor_tensor = torch.tensor([cursor_x, cursor_y], dtype=torch.float32).to(self.device)
+        task_tensor = torch.tensor(task_type, dtype=torch.float32).to(self.device)
+        
+        if len(text_embedding.shape) == 1:
+            text_embedding = text_embedding.unsqueeze(0)
+        
+        cursor_tensor = cursor_tensor.unsqueeze(0)
+        task_tensor = task_tensor.unsqueeze(0)
+        
+        state = torch.cat([text_embedding, cursor_tensor, task_tensor], dim=1)
+        return state
+    
+    def select_action(self, obs, training=True):
+        """根据当前策略选择动作"""
+        try:
+            state = self._process_observation(obs)
+            
+            if torch.isnan(state).any():
+                print("警告: 状态包含NaN值! 替换为零。")
+                state = torch.where(torch.isnan(state), torch.zeros_like(state), state)
+                
+            action_probs, _ = self.policy(state)
+            
+            if torch.isnan(action_probs).any() or torch.sum(action_probs) == 0:
+                print("警告: 动作概率有问题，使用均匀分布。")
+                action_probs = torch.ones_like(action_probs) / self.num_actions
+            
+            if training:
+                try:
+                    action_dist = torch.distributions.Categorical(action_probs)
+                    action = action_dist.sample()
+                    action_log_prob = action_dist.log_prob(action)
+                    
+                    # 存储信息 - GRPO中我们需要保存更多信息以进行组比较
+                    if len(self.groups) == 0 or len(self.groups[-1]["states"]) >= self.group_size:
+                        # 创建新组
+                        self.groups.append({
+                            "states": [state.cpu().detach().numpy()],
+                            "actions": [action.item()],
+                            "action_log_probs": [action_log_prob.item()],
+                            "rewards": [],
+                            "dones": []
+                        })
+                    else:
+                        # 添加到当前组
+                        self.groups[-1]["states"].append(state.cpu().detach().numpy())
+                        self.groups[-1]["actions"].append(action.item())
+                        self.groups[-1]["action_log_probs"].append(action_log_prob.item())
+                    
+                except Exception as e:
+                    print(f"采样动作时出错: {e}")
+                    action = torch.tensor([random.randint(0, self.num_actions-1)], device=self.device)
+                    if len(self.groups) == 0 or len(self.groups[-1]["states"]) >= self.group_size:
+                        self.groups.append({
+                            "states": [state.cpu().detach().numpy()],
+                            "actions": [action.item()],
+                            "action_log_probs": [0.0],
+                            "rewards": [],
+                            "dones": []
+                        })
+                    else:
+                        self.groups[-1]["states"].append(state.cpu().detach().numpy())
+                        self.groups[-1]["actions"].append(action.item())
+                        self.groups[-1]["action_log_probs"].append(0.0)
+            else:
+                # 在评估模式下，直接选择最高概率的动作
+                action = torch.argmax(action_probs, dim=1)
+            
+            return action.item()
+            
+        except Exception as e:
+            print(f"选择动作时出错: {e}")
+            return random.randint(0, self.num_actions-1)
+    
+    def store_reward(self, reward, done):
+        """存储奖励和完成状态"""
+        if len(self.groups) > 0 and len(self.groups[-1]["rewards"]) < len(self.groups[-1]["actions"]):
+            self.groups[-1]["rewards"].append(reward)
+            self.groups[-1]["dones"].append(done)
+    
+    def update(self):
+        """更新策略网络 - GRPO实现"""
+        try:
+            # 检查是否有足够的数据
+            if len(self.groups) == 0:
+                print("警告: 没有足够的数据进行更新")
+                return
+            
+            # 过滤出完整的组(状态、动作、奖励数量一致的组)
+            complete_groups = []
+            for group in self.groups:
+                if (len(group["states"]) == len(group["actions"]) == 
+                    len(group["rewards"]) == len(group["action_log_probs"])):
+                    complete_groups.append(group)
+            
+            if len(complete_groups) == 0:
+                print("警告: 没有完整的组数据")
+                return
+                
+            device = self.device
+            
+            # 对每个完整的组进行更新
+            for group in complete_groups:
+                try:
+                    # 转换为张量
+                    states_batch = torch.tensor(np.vstack(group["states"]), dtype=torch.float32).to(device)
+                    if torch.isnan(states_batch).any():
+                        print("警告: 状态批次包含NaN，将替换为零")
+                        states_batch = torch.where(torch.isnan(states_batch), 
+                                                 torch.zeros_like(states_batch), states_batch)
+                        
+                    actions_batch = torch.tensor(group["actions"], dtype=torch.long).to(device)
+                    old_probs_batch = torch.tensor(group["action_log_probs"], dtype=torch.float32).to(device)
+                    rewards_batch = torch.tensor(group["rewards"], dtype=torch.float32).to(device)
+                    
+                    # 检查NaN
+                    if torch.isnan(old_probs_batch).any():
+                        print("警告: 动作概率批次包含NaN，将替换为小的常数")
+                        old_probs_batch = torch.where(torch.isnan(old_probs_batch), 
+                                                    torch.ones_like(old_probs_batch) * -10.0, 
+                                                    old_probs_batch)
+                    
+                    if torch.isnan(rewards_batch).any():
+                        print("警告: 奖励批次包含NaN，将替换为零")
+                        rewards_batch = torch.where(torch.isnan(rewards_batch), 
+                                                  torch.zeros_like(rewards_batch), 
+                                                  rewards_batch)
+                    
+                    # 计算组内优势 - GRPO的核心
+                    rewards_mean = torch.mean(rewards_batch)
+                    rewards_std = torch.std(rewards_batch)
+                    if rewards_std < 1e-8:
+                        rewards_std = torch.tensor(1.0, device=device)  # 避免除以零
+                        
+                    advantages = (rewards_batch - rewards_mean) / rewards_std
+                    
+                    # 前向传播获取新策略
+                    action_probs, _ = self.policy(states_batch)
+                    
+                    # 检查概率分布
+                    if torch.isnan(action_probs).any():
+                        print("警告: 动作概率有NaN，跳过此次更新")
+                        continue
+                    
+                    # 获取新的动作概率
+                    dist = torch.distributions.Categorical(action_probs)
+                    new_probs = dist.log_prob(actions_batch)
+                    
+                    # 计算策略比率
+                    ratio = torch.exp(new_probs - old_probs_batch)
+                    
+                    # 检查比率是否包含NaN或无穷大
+                    if torch.isnan(ratio).any() or torch.isinf(ratio).any():
+                        print(f"警告: 比率包含NaN或无穷大，将被裁剪")
+                        ratio = torch.clamp(ratio, 0.1, 10.0)
+                    
+                    # 计算GRPO目标函数
+                    surr1 = ratio * advantages
+                    surr2 = torch.clamp(ratio, 1.0 - self.clip_ratio, 1.0 + self.clip_ratio) * advantages
+                    policy_loss = -torch.min(surr1, surr2).mean()
+                    
+                    # 计算KL散度（对参考策略）- GRPO特有
+                    if self.ref_policy is not self.policy:
+                        ref_action_probs, _ = self.ref_policy(states_batch)
+                        kl_div = F.kl_div(
+                            F.log_softmax(action_probs, dim=1),
+                            F.softmax(ref_action_probs, dim=1),
+                            reduction='batchmean'
+                        )
+                    else:
+                        kl_div = torch.tensor(0.0, device=device)
+                    
+                    # 总损失
+                    loss = policy_loss + self.kl_coef * kl_div
+                    
+                    # 检查损失是否为NaN
+                    if torch.isnan(loss) or torch.isinf(loss):
+                        print(f"警告: 损失为NaN或无穷大，跳过此次更新")
+                        continue
+                    
+                    # 反向传播和优化
+                    self.optimizer.zero_grad()
+                    loss.backward()
+                    
+                    # 检查梯度是否为NaN
+                    has_nan_grad = False
+                    for param in self.policy.parameters():
+                        if param.grad is not None and (torch.isnan(param.grad).any() or torch.isinf(param.grad).any()):
+                            has_nan_grad = True
+                            break
+                    
+                    if has_nan_grad:
+                        print(f"警告: 梯度包含NaN或无穷大，跳过此次更新")
+                        continue
+                    
+                    # 梯度裁剪
+                    nn.utils.clip_grad_norm_(self.policy.parameters(), max_norm=0.5)
+                    self.optimizer.step()
+                    
+                except Exception as e:
+                    print(f"组更新过程中出错: {e}")
+                    continue  # 跳过这个组
+            
+            # 清空缓冲区
+            self.groups = []
+            
+        except Exception as e:
+            print(f"整个更新过程出错: {e}")
+            # 出现严重错误时，清空缓冲区防止累积错误数据
+            self.groups = []
+    
+    def train(self, num_episodes=1000, max_steps=100, update_frequency=20, render=False):
+        """训练代理"""
+        rewards_history = []
+        
+        for episode in tqdm(range(num_episodes)):
+            # 初始化环境
+            obs = self.env.reset()
+            episode_reward = 0
+            done = False
+            step = 0
+            
+            while not done and step < max_steps:
+                # 选择动作
+                action = self.select_action(obs)
+                
+                # 执行动作
+                next_obs, reward, done, _ = self.env.step(action)
+                
+                # 存储奖励和结束状态
+                self.store_reward(reward, done)
+                
+                # 更新状态和累积奖励
+                obs = next_obs
+                episode_reward += reward
+                step += 1
+                
+                # 渲染环境（如果需要）
+                if render:
+                    self.env.render()
+            
+            # 记录本回合奖励
+            rewards_history.append(episode_reward)
+            
+            # 定期更新策略
+            if (episode + 1) % update_frequency == 0 or len(self.groups) >= 10:
+                self.update()
+                # 打印当前进度
+                avg_reward = np.mean(rewards_history[-update_frequency:])
+                print(f"Episode {episode+1}/{num_episodes}, Avg Reward: {avg_reward:.2f}")
+        
+        return rewards_history
+    
+    def test(self, num_episodes=10, max_steps=100, render=False):
+        """测试代理性能"""
+        rewards = []
+        
+        for episode in range(num_episodes):
+            obs = self.env.reset()
+            episode_reward = 0
+            done = False
+            step = 0
+            
+            while not done and step < max_steps:
+                # 选择动作（不训练）
+                action = self.select_action(obs, training=False)
+                
+                # 执行动作
+                obs, reward, done, _ = self.env.step(action)
+                episode_reward += reward
+                step += 1
+                
+                if render:
+                    self.env.render()
+                    time.sleep(0.1)  # 放慢速度以便观察
+            
+            rewards.append(episode_reward)
+            print(f"测试回合 {episode+1}/{num_episodes}, 奖励: {episode_reward:.2f}")
+        
+        return rewards
