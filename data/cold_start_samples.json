@@ -1,0 +1,1939 @@
+[
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Hello world!\nThis is a test document.\nWe need to move the cursor to a specific position.",
+    "target_position": [1, 5],
+    "action_sequence": [1, 1, 2, 2, 2, 2, 2],
+    "description": "将光标从(0,0)移动到第2行第5列"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "First line\nSecond line\nThird line\nFourth line",
+    "target_position": [2, 0],
+    "action_sequence": [1, 1, 1],
+    "description": "将光标从(0,0)移动到第3行开头"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Copy this text and paste it later.\nThis is the target line.",
+    "action_sequence": [5, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 3, 3, 3, 3, 3, 10],
+    "description": "复制第一行中的'Copy this text'并粘贴到第二行末尾"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Source text is here.\nPaste location: _____",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制'Source text'并粘贴到第二行的下划线处"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "The word apple appears multiple times. I like apple. Apple is a fruit.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 5, 0, 0, 0, 0, 0, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将文本中的第一个'apple'替换为'orange'"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Line 1\nLine 2\nLine 3\nLine 4\nLine 5",
+    "target_position": [4, 4],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3],
+    "description": "将光标从(0,0)移动到最后一行'Line 5'中的'e'后面"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Beginning\nMiddle part that should be copied\nEnd",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 0, 0, 10],
+    "description": "复制整个中间行并粘贴到最后一行前面"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Replace all instances of 'old' with 'new'. This old text needs updating. The old way is outdated.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10],
+    "description": "将文本中的所有'old'替换为'new'"
+},
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Hello world!\nThis is a test document.\nWe need to move the cursor to a specific position.",
+    "target_position": [1, 5],
+    "action_sequence": [1, 1, 2, 2, 2, 2, 2],
+    "description": "将光标从(0,0)移动到第2行第5列"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "First line\nSecond line\nThird line\nFourth line",
+    "target_position": [2, 0],
+    "action_sequence": [1, 1, 1],
+    "description": "将光标从(0,0)移动到第3行开头"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Programming in Python\nDatabases with SQL\nWeb development\nMachine learning",
+    "target_position": [3, 7],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标从(0,0)移动到'Machine learning'中的'l'处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Line one\nLine two\nLine three\nLine four\nLine five",
+    "target_position": [4, 5],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3],
+    "description": "将光标移动到最后一行的'five'起始位置"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "The quick brown fox\njumps over the lazy dog\npack my box with five dozen liquor jugs",
+    "target_position": [1, 10],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第二行'the'的开头"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Start at the beginning\nNavigate to the middle\nEnd at the last position",
+    "target_position": [2, 20],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到文档最后一行末尾"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Paragraph 1, line 1\nParagraph 1, line 2\n\nParagraph 2, line 1\nParagraph 2, line 2",
+    "target_position": [3, 0],
+    "action_sequence": [1, 1, 1, 1],
+    "description": "将光标移动到第二段的开头"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "def hello_world():\n    print('Hello, world!')\n    return True",
+    "target_position": [1, 10],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到print语句中的'Hello'处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Item 1\nItem 2\nItem 3\nItem 4\nItem 5\nItem 6\nItem 7\nItem 8\nItem 9\nItem 10",
+    "target_position": [9, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "description": "将光标从列表顶部移动到底部"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Line 1, short\nLine 2, a bit longer\nLine 3, even longer than before\nLine 4, shorter again",
+    "target_position": [2, 15],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第三行'longer'处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "A\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\nP",
+    "target_position": [15, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "description": "将光标从顶部移动到底部的字母P"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Start from here and go to the target position across multiple lines.\nThis is the second line.\nThis is the third line.\nThe target is in this fourth line right → here.",
+    "target_position": [3, 35],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到箭头指向的'here'处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "function calculateSum(a, b) {\n    return a + b;\n}",
+    "target_position": [1, 11],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到return语句中的'a'"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# Comment line 1\n# Comment line 2\ndef function():\n    # Function implementation\n    pass",
+    "target_position": [4, 4],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3],
+    "description": "将光标移动到'pass'处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Beginning of document\n\n\n\n\nMiddle of document\n\n\n\n\nEnd of document",
+    "target_position": [5, 0],
+    "action_sequence": [1, 1, 1, 1, 1],
+    "description": "跨过多个空行移动到中间行"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Page Title</title>\n</head>\n<body>\n    <h1>Heading</h1>\n    <p>Paragraph</p>\n</body>\n</html>",
+    "target_position": [7, 7],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到HTML文档中的段落标签"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Line 1 with some text\nLine 2 with more text\nLine 3 with even more text\nLine 4 with lots of text",
+    "target_position": [0, 0],
+    "action_sequence": [],
+    "description": "光标已在第一行第一列，无需移动"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('data.csv')\nprint(data.head())",
+    "target_position": [4, 9],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到pandas数据加载语句"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "for i in range(10):\n    if i % 2 == 0:\n        print('Even')\n    else:\n        print('Odd')",
+    "target_position": [2, 14],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到打印'Even'的语句末尾"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Chapter 1\n\nIt was a dark and stormy night. The wind howled through the trees.",
+    "target_position": [2, 25],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到故事中的'wind'一词"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "2023-01-01,100,95\n2023-01-02,105,98\n2023-01-03,102,97\n2023-01-04,110,105",
+    "target_position": [3, 0],
+    "action_sequence": [1, 1, 1],
+    "description": "在CSV数据中将光标移动到最后一行"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "SELECT name, age\nFROM users\nWHERE age > 18\nORDER BY name ASC;",
+    "target_position": [2, 6],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到SQL的WHERE子句"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "First paragraph that spans\nmultiple lines of text to\nshow line wrapping.\n\nSecond paragraph that\nalso spans multiple lines.",
+    "target_position": [5, 10],
+    "action_sequence": [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第二段中的'spans'一词"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "{\"name\": \"John\", \"age\": 30, \"city\": \"New York\"}",
+    "target_position": [0, 20],
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到JSON中的'age'字段"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "<ul>\n  <li>Item 1</li>\n  <li>Item 2</li>\n  <li>Item 3</li>\n</ul>",
+    "target_position": [3, 6],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到HTML列表的第三项"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# ToDo List\n- [x] Task 1\n- [ ] Task 2\n- [ ] Task 3",
+    "target_position": [2, 6],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到未完成的'Task 2'"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Copy this text and paste it later.\nThis is the target line.",
+    "action_sequence": [5, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 3, 3, 3, 3, 3, 10],
+    "description": "复制第一行中的'Copy this text'并粘贴到第二行末尾"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Source text is here.\nPaste location: _____",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制'Source text'并粘贴到第二行的下划线处"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "def add(a, b):\n    return a + b\n\ndef multiply(a, b):\n    # TODO: Implement this function",
+    "action_sequence": [5, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 10],
+    "description": "复制add函数的实现并粘贴到multiply函数中"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "<div class=\"container\">\n    <div class=\"row\">\n        <div class=\"col-md-6\">Left Column</div>\n        <div class=\"col-md-6\">Right Column</div>\n    </div>\n</div>",
+    "action_sequence": [1, 1, 1, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 1, 1, 3, 3, 3, 3, 10],
+    "description": "复制左列div并粘贴为新行"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Title: Document\nAuthor: John Smith\nDate: 2023-01-01\n\nContent goes here.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制作者名并粘贴到内容区域"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "import pandas as pd\nimport numpy as np\n\n# Load data\ndf = pd.read_csv('data.csv')\n\n# Process data",
+    "action_sequence": [1, 1, 1, 1, 5, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制数据加载行并粘贴为处理数据的模板"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "First Name: ________\nLast Name: ________\nEmail: __________\nPhone: __________",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制名字字段的格式并粘贴为邮箱字段的模板"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# Section 1\nContent for section 1\n\n# Section 2\nContent for section 2\n\n# Section 3\n",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 3, 10],
+    "description": "复制第一节内容并粘贴到第三节"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "item1, item2, item3",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制'item2'并粘贴到列表末尾"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "User: John\nRole: Admin\nStatus: Active\nDepartment: IT",
+    "action_sequence": [1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制部门信息并粘贴到用户名后"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n    \n    def area(self):\n        return self.width * self.height\n\nclass Circle:\n    def __init__(self, radius):\n        self.radius = radius",
+    "action_sequence": [1, 1, 1, 1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 10],
+    "description": "复制Rectangle的area方法并粘贴到Circle类中"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Monday: Meeting at 9am\nTuesday: \nWednesday: Lunch at 12pm\nThursday: \nFriday: Call at 3pm",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制周一的会议并粘贴到周二"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "<link rel=\"stylesheet\" href=\"styles.css\">\n\n<script src=\"script.js\"></script>",
+    "action_sequence": [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 10],
+    "description": "复制样式表链接并粘贴在脚本标签前"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Header 1,Header 2,Header 3\nValue 1,Value 2,Value 3\nValue 4,Value 5,Value 6",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制'Header 2'并粘贴到第二行对应位置"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Customer: ABC Corp\nOrder: #12345\nItems:\n1. Product A\n2. Product B",
+    "action_sequence": [1, 1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 10],
+    "description": "复制'Product A'并创建第三个产品"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "def main():\n    # Initialize\n    setup()\n    \n    # Main loop\n    run()\n    \n    # Cleanup\n    teardown()",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 9, 1, 1, 1, 1, 3, 3, 3, 3, 10],
+    "description": "复制setup()调用并粘贴到teardown()前"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "/* Style for buttons */\nbutton {\n    background-color: blue;\n    color: white;\n    padding: 10px;\n}\n\n/* Style for links */",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 3, 10],
+    "description": "复制按钮样式并为链接创建类似样式"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "1. Introduction\n   a. Background\n   b. Objectives\n2. Methodology\n   a. Data Collection\n   b. Analysis",
+    "action_sequence": [1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 10],
+    "description": "复制'a. Background'格式化行并为方法论创建新子项"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "First Quarter: $10,000\nSecond Quarter: $15,000\nThird Quarter: \nFourth Quarter: ",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制第一季度的金额并粘贴到第三季度"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Team A:\nJohn Smith\nJane Doe\n\nTeam B:\n",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 10],
+    "description": "复制Team A的成员并粘贴到Team B"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# Configuration File\n\nDEBUG=True\nLOG_LEVEL=info\nAPI_KEY=1234567890\nMAX_RETRIES=3",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制DEBUG配置并创建新的配置项"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "The word apple appears multiple times. I like apple. Apple is a fruit.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 5, 0, 0, 0, 0, 0, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将文本中的第一个'apple'替换为'orange'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Replace all instances of 'old' with 'new'. This old text needs updating. The old way is outdated.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10],
+    "description": "将文本中的所有'old'替换为'new'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "function getData() {\n    // TODO: Implement this function\n    return null;\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将'return null;'替换为实际实现"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "var x = 5;\nvar y = 10;\nvar z = x + y;",
+    "action_sequence": [0, 5, 3, 3, 3, 9, 1, 5, 3, 3, 3, 9, 1, 1, 5, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10, 3, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10, 3, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10],
+    "description": "将所有的'var'替换为'let'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# TODO: Add error handling\ndef process_data(data):\n    result = data * 2\n    return result",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "为函数添加错误处理"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Hello [NAME], welcome to our service!",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将占位符'[NAME]'替换为实际名称"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Project Status: PENDING\nStart Date: 2023-01-01\nEnd Date: 2023-01-31",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将项目状态从'PENDING'改为'IN_PROGRESS'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "background-color: #FF0000;\ntext-align: center;\nfont-size: 14px;",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将CSS中的红色背景色替换为蓝色"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "http://example.com/page.html",
+    "action_sequence": [5, 0, 0, 0, 0, 9, 3, 3, 3, 3, 5, 0, 0, 0, 0, 11, 3, 3, 3, 3, 3, 10],
+    "description": "将HTTP URL更改为HTTPS"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Contact information:\nEmail: contact@example.com\nPhone: (123) 456-7890",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更新联系邮箱地址"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "$price = 10.99;\n$tax_rate = 0.08;\n$total = $price * (1 + $tax_rate);",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "更新价格值"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Python version: 3.8\nPackages: numpy, pandas, matplotlib",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 5, 3, 11, 3, 3, 10],
+    "description": "将Python版本从3.8更新到3.9"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Username: admin\nPassword: 12345\nRole: user",
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将用户角色从'user'改为'administrator'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "<!-- TODO: Fix layout -->\n<div class=\"container\">\n    <div class=\"content\">Page content</div>\n</div>",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更新HTML注释中的TODO项"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const API_URL = 'http://api.example.com/v1';\nconst API_KEY = 'abcdef123456';",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 11, 3, 3, 10],
+    "description": "将API版本从v1更新到v2"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Release: 2023.1.0\nDate: January 15, 2023\nChanges: Bug fixes and performance improvements",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更新版本号为下一个版本"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "SELECT * FROM users WHERE status = 'active';",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改SQL查询的WHERE条件"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "- [ ] Task 1\n- [ ] Task 2\n- [ ] Task 3\n- [ ] Task 4",
+    "action_sequence": [3, 3, 3, 5, 3, 9, 3, 5, 3, 11, 3, 10, 1, 3, 3, 3, 5, 3, 9, 3, 5, 3, 11, 3, 10],
+    "description": "将前两个任务标记为已完成"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "<input type=\"text\" name=\"username\" placeholder=\"Enter username\">\n<input type=\"password\" name=\"password\" placeholder=\"Enter password\">",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更新HTML输入字段的占位符文本"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Current version: 1.2.3\nMinimum required: 1.0.0\nRecommended: 1.2.0",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 3, 10, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 3, 10],
+    "description": "更新软件版本信息"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Copyright (c) 2023 Company Name. All rights reserved.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 3, 10],
+    "description": "更新版权年份"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "max_connections=100\nssl=true\ndebugging=false",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 10],
+    "description": "更新配置文件中的连接设置和调试模式"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "function getValue() {\n    return data.value;\n}",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改函数返回的属性路径"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "FROM: john@example.com\nTO: support@company.com\nSUBJECT: Technical Issue\n\nI am experiencing an issue with...",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改邮件主题行"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Temperature readings:\n25.3°C\n24.8°C\n26.1°C\n25.5°C",
+    "target_position": [3, 0],
+    "action_sequence": [1, 1, 1],
+    "description": "将光标移动到第三个温度读数"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "{\n    \"name\": \"Product\",\n    \"price\": 29.99,\n    \"available\": true\n}",
+    "target_position": [2, 12],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到JSON中的价格值"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Row 1, Column 1 | Row 1, Column 2 | Row 1, Column 3\nRow 2, Column 1 | Row 2, Column 2 | Row 2, Column 3\nRow 3, Column 1 | Row 3, Column 2 | Row 3, Column 3",
+    "target_position": [1, 16],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到表格中的Row 2, Column 2"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "console.log('Debug info');\nalert('Error occurred');\n// TODO: Add more error handling",
+    "target_position": [2, 3],
+    "action_sequence": [1, 1, 3, 3, 3],
+    "description": "将光标移动到TODO注释处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "------------------\n|     TITLE     |\n------------------\n| Content here   |\n------------------",
+    "target_position": [3, 2],
+    "action_sequence": [1, 1, 1, 3, 3],
+    "description": "将光标移动到ASCII表格的内容区域"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Question 1: What is 2+2?\nAnswer: _____\n\nQuestion 2: What is 3*4?\nAnswer: _____",
+    "target_position": [4, 8],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第二个问题的答案填空处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "//////////////////\n// SECTION ONE //\n//////////////////\n\n// Code here\n\n//////////////////\n// SECTION TWO //\n//////////////////",
+    "target_position": [4, 3],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3],
+    "description": "将光标移动到第一个部分的代码注释处"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "NAME: ________\nDATE: ________\nSIGNATURE: ________",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 3, 3, 3, 3, 3, 10],
+    "description": "复制NAME字段并粘贴到DATE字段"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Step 1: First action\nStep 2: Second action\nStep 3: \nStep 4: Final action",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 1, 1, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制第一步并粘贴到第三步"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "INVOICE\n\nItem 1: $10.00\nItem 2: $15.00\nItem 3: $20.00\n\nTotal: $45.00",
+    "action_sequence": [1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制项目2并创建项目4"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# Main Header\n\n## Subheader 1\nContent for section 1\n\n## Subheader 2\nContent for section 2",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 3, 3, 10],
+    "description": "复制第一个小节并创建第三个小节"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "<div>\n    <p>Paragraph 1</p>\n    <p>Paragraph 2</p>\n</div>",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 10],
+    "description": "复制第一个段落标签并创建第三个段落"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "January: $1000\nFebruary: $1200\nMarch: $1100\nApril: ",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制1月的金额并粘贴到4月"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "const sum = (a, b) => a + b;\n\nconst multiply = (a, b) => ",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制sum函数的实现部分并修改为multiply函数"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "price = 19.99\ntax = price * 0.08\ntotal = price + tax",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "更新价格变量值"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "file_format = 'csv'\noutput_dir = '/tmp/data/'\nprefix = 'report_'",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10],
+    "description": "更改文件格式变量"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Monday: Meeting\nTuesday: Training\nWednesday: Project work\nThursday: Meeting\nFriday: Review",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将所有的Meeting替换为Conference Call"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "def calculate_sum(a, b):\n    return a + b\n\ndef calculate_product(a, b):\n    return a * b",
+    "target_position": [3, 4],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3],
+    "description": "将光标移动到第二个函数的返回语句"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "// JavaScript Function\nfunction greet(name) {\n    console.log('Hello, ' + name);\n    return true;\n}",
+    "target_position": [2, 15],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到console.log语句中的'Hello'位置"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome</h1>\n</body>\n</html>",
+    "target_position": [6, 8],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到h1标签中的'Welcome'开头"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "春眠不觉晓，\n处处闻啼鸟。\n夜来风雨声，\n花落知多少。",
+    "target_position": [2, 2],
+    "action_sequence": [1, 1, 3, 3],
+    "description": "将光标移动到'夜来风雨声'的'风'字"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Le soleil brille aujourd'hui.\nIl fait très chaud.\nJ'aime l'été.",
+    "target_position": [1, 8],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第二行'très'位置"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Lorem ipsum dolor sit amet\nConsectetur adipiscing elit\nSed do eiusmod tempor incididunt",
+    "target_position": [2, 7],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第三行'eiusmod'位置"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "SELECT * FROM users\nWHERE status = 'active'\nORDER BY created_at DESC;",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 1, 1, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制WHERE条件并粘贴到ORDER BY子句后"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "import numpy as np\nimport pandas as pd\n\n# Data processing",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 10],
+    "description": "复制第一行import语句并粘贴到注释后"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "<div class=\"container\">\n    <p>Paragraph 1</p>\n</div>",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 10],
+    "description": "复制段落标签并创建第二个段落"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "用户名：admin\n密码：password\n角色：管理员",
+    "action_sequence": [0, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 1, 1, 1, 3, 3, 3, 10],
+    "description": "复制'admin'并粘贴为新的角色值"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Bonjour,\n\nMerci pour votre message.\n\nCordialement,",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制问候语并粘贴到结束语前"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const API_KEY = 'abc123';\nconst API_URL = 'https://api.example.com';\nconst API_VERSION = 'v1';",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将API密钥从'abc123'替换为'xyz789'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Hello World! This is a test message.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将'World'替换为'Universe'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "今天天气很好，我想去公园散步。今天晚上有电影。",
+    "action_sequence": [0, 5, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10],
+    "description": "将第二个'今天'替换为'明天'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Les chats sont mignons. J'aime les chats.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将所有'chats'替换为'chiens'"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "{\n  \"name\": \"John\",\n  \"age\": 30,\n  \"city\": \"New York\"\n}",
+    "target_position": [3, 10],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到JSON中的city值位置"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "import pandas as pd\nimport numpy as np\n\n# Load data\ndf = pd.read_csv('data.csv')\n\n# Analysis\nresult = df.groupby('category').mean()",
+    "target_position": [6, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1],
+    "description": "将光标移动到分析注释行"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "一、项目介绍\n二、需求分析\n三、系统设计\n四、实现细节\n五、测试报告",
+    "target_position": [2, 0],
+    "action_sequence": [1, 1],
+    "description": "将光标移动到'三、系统设计'开头"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "First line\nSecond line\nThird line with special character @\nFourth line",
+    "target_position": [2, 27],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第三行的特殊字符'@'位置"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "function calculateTax(income) {\n  const rate = 0.2;\n  return income * rate;\n}",
+    "target_position": [1, 8],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到rate变量的值前"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# Markdown Heading\n\n- Item 1\n- Item 2\n- Item 3",
+    "target_position": [4, 2],
+    "action_sequence": [1, 1, 1, 1, 3, 3],
+    "description": "将光标移动到最后一个列表项文本开头"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "def calculate_square(x):\n    return x * x\n\n# More functions below",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制整个函数并粘贴到注释后面"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "<ul>\n  <li>First item</li>\n  <li>Second item</li>\n</ul>",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 10],
+    "description": "复制第一个列表项并创建第三个列表项"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "姓名：张三\n年龄：25\n职业：工程师",
+    "action_sequence": [1, 1, 1, 5, 0, 0, 0, 0, 9, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制'职业：'并创建新的一行"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "const colors = ['red', 'green', 'blue'];\nconst shapes = ['circle', 'square', 'triangle'];",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制'red'并在第二行数组中添加该颜色"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World\");\n    }\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制println语句并在下一行添加相同语句"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const firstName = 'John';\nconst lastName = 'Doe';\nconst fullName = firstName + ' ' + lastName;",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "将'John'替换为'Jane'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# TODO: Fix this calculation\nresult = 10 * 5 + 20",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改计算公式中的操作符"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "颜色：红色\n大小：中号\n形状：圆形",
+    "action_sequence": [3, 3, 3, 5, 3, 3, 9, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10],
+    "description": "将'红色'替换为'蓝色'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "for (let i = 0; i < 10; i++) {\n  console.log(i);\n}",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 5, 3, 3, 11, 3, 3, 10],
+    "description": "将循环上限从10更改为5"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将'ipsum'替换为'lorem'"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# Section 1\nContent for section 1\n\n# Section 2\nContent for section 2\n\n# Section 3\nContent for section 3",
+    "target_position": [6, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1],
+    "description": "将光标移动到第三个章节标题"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "if (condition) {\n    doSomething();\n} else {\n    doSomethingElse();\n}",
+    "target_position": [3, 4],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3],
+    "description": "将光标移动到else语句块内"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "「こんにちは、世界」\n「プログラミングは楽しい」\n「日本語を勉強しています」",
+    "target_position": [1, 5],
+    "action_sequence": [1, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第二行日语文本中的'グ'字符"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "SELECT c.customer_id, c.name, o.order_date\nFROM customers c\nJOIN orders o ON c.customer_id = o.customer_id\nWHERE o.order_date > '2023-01-01'",
+    "target_position": [2, 5],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3],
+    "description": "将光标移动到SQL的JOIN关键字后"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "try {\n    // Try block\n    riskyOperation();\n} catch (Exception e) {\n    // Catch block\n    handleError(e);\n}",
+    "target_position": [4, 6],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到catch块注释后"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "var config = {\n  apiKey: '12345',\n  timeout: 3000,\n  debug: false\n};",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 10],
+    "description": "复制apiKey配置行并添加新配置项"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "class Rectangle:\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height",
+    "action_sequence": [1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 10],
+    "description": "复制height属性的初始化行并添加新属性"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "星期一：开会\n星期二：培训\n星期三：\n星期四：评审",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 10],
+    "description": "复制星期一的安排并粘贴到星期三"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "h1 {\n  font-size: 24px;\n  color: #333;\n}\n\np {\n  font-size: 16px;\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 10],
+    "description": "复制h1的color样式规则并添加到p选择器"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Ce document contient des informations importantes.\nVeuillez lire attentivement.",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 10],
+    "description": "复制法语第一句并创建新的第三行"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "max_users = 100;\nmax_connections = 200;\nmax_requests = 300;",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10],
+    "description": "将所有配置值从数字改为字符串形式"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "User-Agent: Mozilla/5.0\nAccept: text/html\nContent-Type: application/json",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改Accept头的值"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "服务器地址：192.168.1.1\n端口：8080\n协议：HTTP",
+    "action_sequence": [1, 1, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "将协议从HTTP更改为HTTPS"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "class MyClass extends BaseClass implements Interface1 {",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更改类实现的接口名称"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Dear Sir/Madam,\n\nI am writing to inquire about the position advertised.\n\nSincerely,\nJohn Smith",
+    "target_position": [4, 0],
+    "action_sequence": [1, 1, 1, 1],
+    "description": "将光标移动到信件结尾处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "const calculateArea = (radius) => {\n  return Math.PI * radius * radius;\n};\n\nconst calculateCircumference = (radius) => {\n  return 2 * Math.PI * radius;\n};",
+    "target_position": [4, 0],
+    "action_sequence": [1, 1, 1, 1],
+    "description": "将光标移动到第二个函数定义开始处"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# 项目文档\n\n## 1. 背景\n这是项目背景介绍\n\n## 2. 目标\n实现以下功能：\n- 功能1\n- 功能2",
+    "target_position": [5, 0],
+    "action_sequence": [1, 1, 1, 1, 1],
+    "description": "将光标移动到目标章节标题"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "std::vector<int> numbers = {1, 2, 3, 4, 5};\nfor (const auto& num : numbers) {\n    std::cout << num << std::endl;\n}",
+    "target_position": [2, 4],
+    "action_sequence": [1, 1, 3, 3, 3, 3],
+    "description": "将光标移动到C++输出语句"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "- [x] Task 1\n- [ ] Task 2\n- [ ] Task 3\n- [x] Task 4",
+    "target_position": [1, 6],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到第二个待办事项文本开始处"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "header('Content-Type: application/json');\necho json_encode($response);",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制PHP头部设置并在echo前添加新的头部"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "FROM ubuntu:20.04\nRUN apt-get update\nRUN apt-get install -y python3",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制apt-get安装指令并添加新的安装命令"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "2023-01-01,Revenue,1000\n2023-01-02,Revenue,1200\n2023-01-03,Expense,500",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制第一行日期并用于创建新记录"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Carpe diem, quam minimum credula postero.",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 10],
+    "description": "复制拉丁语表达'Carpe diem'并重复使用"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "@app.route('/users', methods=['GET'])\ndef get_users():\n    return jsonify(users)",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改Flask路由中的HTTP方法"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "version: '3'\nservices:\n  app:\n    image: myapp:1.0\n    ports:\n      - \"8080:8080\"",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 3, 10],
+    "description": "更新Docker镜像版本"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "def process_data(data, options={}):\n    # Process data here\n    return result",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 9, 3, 5, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更改Python函数的默认参数"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "这个函数计算两个数字的和。\n这个函数使用加法运算符。",
+    "action_sequence": [0, 5, 3, 3, 3, 9, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 9, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10],
+    "description": "将文本中的'和'替换为'差'，'加法'替换为'减法'"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "$ git clone https://github.com/user/repo.git\n$ cd repo\n$ npm install\n$ npm start",
+    "target_position": [2, 0],
+    "action_sequence": [1, 1],
+    "description": "将光标移动到npm install命令"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "1. Create a new branch\n2. Make changes\n3. Commit changes\n4. Create pull request\n5. Review code\n6. Merge",
+    "target_position": [3, 3],
+    "action_sequence": [1, 1, 1, 3, 3, 3],
+    "description": "将光标移动到第四步开始"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "```python\ndef hello():\n    print(\"Hello, world!\")\n```",
+    "target_position": [2, 10],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到Python代码中的字符串内"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "<table>\n  <tr>\n    <td>Cell 1</td>\n    <td>Cell 2</td>\n  </tr>\n</table>",
+    "target_position": [3, 8],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到表格第二个单元格内"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Subject: Meeting Agenda\nDate: 2023-05-15\nLocation: Conference Room A\nAttendees: John, Mary, Bob",
+    "target_position": [3, 11],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到与会者列表开始处"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# Installation\npip install package\n\n# Usage\nimport package",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制安装说明并创建新的文档部分"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "interface User {\n  id: number;\n  name: string;\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 10],
+    "description": "复制TypeScript接口的id字段并添加新字段"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "body {\n  margin: 0;\n  padding: 0;\n  font-family: Arial, sans-serif;\n}",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 10],
+    "description": "复制CSS主体样式并为新选择器创建样式"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "import React from 'react';\nimport { useState } from 'react';",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 10],
+    "description": "复制React import语句并添加新的导入"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "database:\n  host: localhost\n  port: 5432\n  username: admin\n  password: password123",
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改YAML配置中的数据库主机地址"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "<dependency>\n  <groupId>org.example</groupId>\n  <artifactId>library</artifactId>\n  <version>1.0.0</version>\n</dependency>",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 10],
+    "description": "更新Maven依赖版本"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "$ kubectl apply -f deployment.yaml\n$ kubectl get pods\n$ kubectl describe pod my-app",
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更改Kubernetes命令中的pod名称"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "我们的网站地址是：http://example.com/\n请访问上述地址获取更多信息。",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将HTTP网址更改为HTTPS格式"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "public static void main(String[] args) {\n    System.out.println(\"Starting application...\");\n    \n    // Initialize components\n    initDatabase();\n    initServer();\n    \n    System.out.println(\"Application started successfully.\");\n}",
+    "target_position": [4, 4],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3],
+    "description": "将光标移动到初始化数据库函数调用"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# Markdown 文档\n\n## 第一部分\n这是第一部分的内容。\n\n## 第二部分\n这是第二部分的内容。\n\n## 第三部分\n这是第三部分的内容。",
+    "target_position": [8, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1],
+    "description": "将光标移动到第三部分标题"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "export default class Component extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      count: 0\n    };\n  }\n  \n  render() {\n    return <div>{this.state.count}</div>;\n  }\n}",
+    "target_position": [8, 2],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 3, 3],
+    "description": "将光标移动到React组件的render方法"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "database:\n  host: localhost\n  port: 5432\n  username: admin\n  password: ********\n  database: mydb",
+    "target_position": [4, 11],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到数据库密码值处"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "git init\ngit add .\ngit commit -m \"Initial commit\"\ngit remote add origin https://github.com/user/repo.git\ngit push -u origin master",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制git commit命令并创建新的提交"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "print(\"Hello\")\n# End of script",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制print语句并添加第二条打印语句"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "- 列表项1\n- 列表项2",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 9, 1, 1, 10],
+    "description": "复制第一个列表项并创建第三个列表项"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Première ligne\nDeuxième ligne",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 10],
+    "description": "复制第一行法语并创建第三行"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const button = document.getElementById('submit-button');\nbutton.addEventListener('click', handleSubmit);",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更改JavaScript事件监听器中的事件类型"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "SELECT * FROM users WHERE status = 1 ORDER BY created_at DESC;",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 9, 3, 5, 3, 11, 3, 3, 10],
+    "description": "修改SQL查询中的状态值"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "<meta name=\"description\" content=\"Website description here\">\n<meta name=\"keywords\" content=\"keyword1, keyword2, keyword3\">",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更新网站的meta描述内容"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "function processPayment(amount, currency, callback) {\n  // Validate inputs\n  if (!amount || amount <= 0) {\n    return callback(new Error('Invalid amount'));\n  }\n  \n  // Process payment\n  doPaymentProcessing(amount, currency, function(err, result) {\n    if (err) return callback(err);\n    return callback(null, result);\n  });\n}",
+    "target_position": [7, 2],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 3, 3],
+    "description": "将光标移动到支付处理函数调用"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "CREATE TABLE users (\n  id INT PRIMARY KEY,\n  username VARCHAR(50) NOT NULL,\n  email VARCHAR(100) NOT NULL,\n  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);",
+    "target_position": [2, 2],
+    "action_sequence": [1, 1, 3, 3],
+    "description": "将光标移动到SQL表的username字段定义"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "<!-- Navigation -->\n<nav>\n  <ul>\n    <li><a href=\"#home\">Home</a></li>\n    <li><a href=\"#about\">About</a></li>\n    <li><a href=\"#contact\">Contact</a></li>\n  </ul>\n</nav>",
+    "target_position": [5, 9],
+    "action_sequence": [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到Contact链接文本"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "from datetime import datetime\n\ntoday = datetime.now()\nprint(today.strftime('%Y-%m-%d'))",
+    "action_sequence": [1, 1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制Python日期格式化代码并创建新的打印语句"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "html, body {\n  margin: 0;\n  padding: 0;\n}\n\n/* Other styles */",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 10],
+    "description": "复制CSS重置样式并添加到新选择器"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "- name: Install dependencies\n  apt:\n    name: nginx\n    state: present",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制Ansible任务并创建新的安装任务"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "const users = [\n  { id: 1, name: 'John' },\n  { id: 2, name: 'Jane' }\n];",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 10],
+    "description": "复制JavaScript对象并添加到数组"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "def calculate_tax(amount, rate=0.2):\n    return amount * rate",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 10],
+    "description": "修改Python函数中的税率默认值"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const environment = 'development';\n\nif (environment === 'development') {\n  console.log('Debug mode enabled');\n}",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将JavaScript中的环境变量从开发更改为生产"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# 联系信息\n电子邮箱：contact@example.com\n电话：+1 123-456-7890\n地址：123 Main St, City",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "更新中文联系信息中的电子邮箱地址"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Protocol: HTTP/1.1\nHost: api.example.com\nEndpoint: /v1/users\nMethod: GET\nHeaders: Authorization, Content-Type",
+    "target_position": [2, 10],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "将光标移动到API端点路径"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "$ docker run -d --name my-container -p 8080:80 nginx:latest\n$ docker ps\n$ docker logs my-container",
+    "target_position": [1, 0],
+    "action_sequence": [1],
+    "description": "将光标移动到第二个Docker命令"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "1. 序言\n   a. 背景介绍\n   b. 研究目的\n2. 方法论\n   a. 数据收集\n   b. 分析方法",
+    "target_position": [3, 3],
+    "action_sequence": [1, 1, 1, 3, 3, 3],
+    "description": "将光标移动到方法论部分"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "// Step 1: Initialize\ninitialize();\n\n// Step 2: Process\nprocess();",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 10],
+    "description": "复制第一步的注释和代码并创建第三步"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Name: Product A\nPrice: $10.99\nCategory: Electronics",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 10],
+    "description": "复制产品信息并创建第二个产品"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "function getUser(id) {\n  return users.find(user => user.id === id);\n}",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制JavaScript函数并创建新函数"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# Configuration\nlanguage: 'en'\ntheme: 'dark'\ndebug: false",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 5, 3, 3, 11, 3, 3, 10, 1, 1, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "修改配置文件中的语言和主题设置"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "router.get('/users', authMiddleware, usersController.getAll);\nrouter.post('/users', authMiddleware, usersController.create);",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "将API路由中的控制器引用更新为新版本"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "## Installation\n\n```bash\nnpm install my-package\n```",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 9, 3, 3, 3, 5, 3, 3, 3, 11, 3, 3, 3, 3, 10],
+    "description": "更新Markdown文档中的安装命令"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "def calculate_average(numbers):\n    total = sum(numbers)\n    return total / len(numbers)\n\nresult = calculate_average([1, 2, 3, 4, 5])",
+    "target_position": [1, 10],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the sum function call"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "class Animal:\n    def __init__(self, name):\n        self.name = name\n    \n    def speak(self):\n        pass\n\nclass Dog(Animal):\n    def speak(self):\n        return \"Woof!\"",
+    "target_position": [8, 4],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3],
+    "description": "Move cursor to the speak method in the Dog class"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# 数据处理函数\ndef process_data(data):\n    # 验证输入\n    if not data:\n        return None\n    \n    # 处理数据\n    result = data * 2\n    return result",
+    "target_position": [6, 4],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 3, 3, 3, 3],
+    "description": "将光标移动到处理数据注释行"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "function handleSubmit() {\n  const username = document.getElementById('username').value;\n  const password = document.getElementById('password').value;\n  \n  // Validate inputs\n  if (!username || !password) {\n    showError('Please fill in all fields');\n    return;\n  }\n  \n  // Submit form\n  submitForm(username, password);\n}",
+    "target_position": [10, 2],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3],
+    "description": "Move cursor to the submit form comment line"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "const arr = [1, 2, 3, 4, 5];\nconst doubled = arr.map(num => num * 2);\nconst filtered = arr.filter(num => num > 2);\nconst sum = arr.reduce((acc, num) => acc + num, 0);",
+    "target_position": [2, 16],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the filter callback function"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "<!-- Header Section -->\n<header>\n  <h1>My Website</h1>\n  <nav>\n    <ul>\n      <li><a href=\"#home\">Home</a></li>\n      <li><a href=\"#about\">About</a></li>\n    </ul>\n  </nav>\n</header>",
+    "action_sequence": [6, 6, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 7, 7, 7, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy the Home link list item and create a new menu item"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# Configuration Settings\nSERVER_HOST=localhost\nSERVER_PORT=3000\nDEBUG_MODE=true",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 10],
+    "description": "Copy SERVER_HOST line and create a new configuration entry"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "import axios from 'axios';\nimport React from 'react';\nimport { useState, useEffect } from 'react';",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 10],
+    "description": "Copy the axios import statement and create a new import"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "// 用户验证函数\nfunction validateUser(username, password) {\n  if (!username || !password) {\n    return false;\n  }\n  return true;\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 10],
+    "description": "复制if语句并在函数末尾添加新的验证条件"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy the println statement and add another line"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const API_URL = 'https://api.example.com/v1';\nconst API_KEY = 'abcdef123456';\nconst TIMEOUT = 5000;",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10],
+    "description": "Change the API version from v1 to v2"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "SELECT * FROM products WHERE category = 'electronics' ORDER BY price ASC;",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Change the product category in the SQL query"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# 用户设置\nname = \"张三\"\nemail = \"zhangsan@example.com\"\nage = 30",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 5, 3, 3, 11, 3, 3, 3, 10],
+    "description": "将用户名从\"张三\"改为\"李四\""
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "// Error messages\nconst ERROR_NOT_FOUND = 'Resource not found';\nconst ERROR_UNAUTHORIZED = 'Unauthorized access';\nconst ERROR_SERVER = 'Internal server error';",
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Update the unauthorized error message"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "<div class=\"card\">\n  <h2 class=\"card-title\">Product Name</h2>\n  <p class=\"card-description\">Product description goes here.</p>\n  <button class=\"btn-primary\">Add to Cart</button>\n</div>",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Change the product title in the card component"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "void main() {\n  final List<String> items = ['Apple', 'Banana', 'Cherry'];\n  for (final item in items) {\n    print(item);\n  }\n}",
+    "target_position": [2, 12],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the Dart for loop declaration"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# Markdown Document\n\n## Introduction\nThis is the introduction section.\n\n## Methods\nThis is the methods section.\n\n## Results\nThis is the results section.",
+    "target_position": [7, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1],
+    "description": "Move cursor to the Results section heading"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "array = [10, 20, 30, 40, 50]\nputs \"Element at index 0: #{array[0]}\"\nputs \"Element at index 1: #{array[1]}\"\nputs \"Element at index 2: #{array[2]}\"",
+    "target_position": [2, 23],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the array index in the Ruby code"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Aujourd'hui, il fait beau.\nDemain, il va pleuvoir.\nAprès-demain, nous ne savons pas.",
+    "target_position": [1, 8],
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Déplacer le curseur au mot 'va' dans la deuxième ligne"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Ein kleiner Text auf Deutsch.\nDieser Text hat mehrere Zeilen.\nJede Zeile enthält einen Satz.",
+    "target_position": [2, 10],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Bewegen Sie den Cursor zum Wort 'enthält'"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": ".container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 10],
+    "description": "Copy the max-width property and create a new CSS class"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Pour faire une tarte aux pommes, vous aurez besoin de :\n- 6 pommes\n- 200g de farine\n- 100g de beurre\n- 50g de sucre",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 10],
+    "description": "Copier un ingrédient et ajouter un nouvel ingrédient à la liste"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\tfmt.Println(\"Hello, Go!\")\n}",
+    "action_sequence": [3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 10],
+    "description": "Copy the import statement and add another package import"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# 这是一个Python脚本示例\n\ndef 问候(名字):\n    return f\"你好，{名字}！\"\n\n姓名 = \"小明\"\n打印(问候(姓名))",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制问候函数并添加新函数"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "import csv\nimport json\nimport os\n\ndef process_file(filename):\n    with open(filename, 'r') as file:\n        data = file.read()\n    return data",
+    "action_sequence": [4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 9, 3, 5, 3, 11, 3, 3, 10],
+    "description": "Change the file open mode from 'r' to 'rb'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>My Website</title>\n</head>\n<body>\n    <h1>Welcome</h1>\n</body>\n</html>",
+    "action_sequence": [4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Change the website title"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Les jours de la semaine sont :\n- Lundi\n- Mardi\n- Mercredi\n- Jeudi\n- Vendredi\n- Samedi\n- Dimanche",
+    "action_sequence": [1, 1, 1, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Remplacer 'Mercredi' par 'MERCREDI'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const user = {\n  name: 'John',\n  age: 30,\n  email: 'john@example.com'\n};",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "Change the user's name from 'John' to 'Alice'"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# 项目计划\n\n## 里程碑1\n- 任务1\n- 任务2\n\n## 里程碑2\n- 任务3\n- 任务4",
+    "target_position": [6, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1],
+    "description": "将光标移动到第二个里程碑标题"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "SELECT DISTINCT c.customer_id, c.name\nFROM customers c\nJOIN orders o ON c.customer_id = o.customer_id\nWHERE o.order_date > '2023-01-01'\nORDER BY c.name ASC;",
+    "target_position": [3, 6],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the WHERE clause in the SQL query"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "git clone https://github.com/username/repo.git\ncd repo\nnpm install\nnpm start",
+    "target_position": [2, 0],
+    "action_sequence": [1, 1],
+    "description": "Move cursor to the npm install command"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "interface User {\n  id: string;\n  name: string;\n  email: string;\n  role: 'admin' | 'user';\n}",
+    "target_position": [4, 2],
+    "action_sequence": [1, 1, 1, 1, 3, 3],
+    "description": "Move cursor to the TypeScript role property definition"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Hoy es un día hermoso.\nMañana va a llover.\nLa próxima semana hará sol.",
+    "target_position": [2, 10],
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Mover el cursor a la palabra 'semana'"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "router.get('/api/users', UserController.getAll);\nrouter.post('/api/users', UserController.create);",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 10],
+    "description": "Copy the GET route and create a new route for a different HTTP method"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "@media (max-width: 768px) {\n  .container {\n    padding: 10px;\n  }\n}",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy the media query and create another for a different screen size"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# 数据库连接配置\nDB_HOST=localhost\nDB_PORT=5432\nDB_NAME=mydb\nDB_USER=postgres\nDB_PASS=password",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 10],
+    "description": "复制数据库连接配置并添加新的配置部分"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n-1)",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 10],
+    "description": "Copy the factorial function and create a new recursive function"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "version: '3'\nservices:\n  web:\n    image: nginx:latest\n    ports:\n      - \"80:80\"\n    volumes:\n      - ./html:/usr/share/nginx/html",
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Change the Docker image from 'nginx:latest' to 'nginx:alpine'"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "async function fetchData() {\n  try {\n    const response = await fetch('https://api.example.com/data');\n    const data = await response.json();\n    return data;\n  } catch (error) {\n    console.error('Error fetching data:', error);\n    return null;\n  }\n}",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Update the API URL in the fetch function"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# 邮件配置\nSMTP_SERVER = \"smtp.example.com\"\nSMTP_PORT = 587\nSMTP_USER = \"user@example.com\"\nSMTP_PASSWORD = \"password123\"",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改SMTP密码值"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "La température aujourd'hui est de 25°C.\nDemain, il fera 28°C.",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 5, 3, 3, 11, 3, 3, 10, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 5, 3, 3, 11, 3, 3, 10],
+    "description": "Changer les températures dans le texte"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-user',\n  templateUrl: './user.component.html',\n  styleUrls: ['./user.component.css']\n})\nexport class UserComponent implements OnInit {\n  constructor() { }\n\n  ngOnInit(): void {\n    // Initialization code\n  }\n}",
+    "target_position": [11, 4],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3],
+    "description": "Move cursor to the ngOnInit method in the Angular component"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "apiVersion: v1\nkind: Pod\nmetadata:\n  name: nginx\n  labels:\n    app: nginx\nspec:\n  containers:\n  - name: nginx\n    image: nginx:1.14.2\n    ports:\n    - containerPort: 80",
+    "target_position": [9, 10],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the image field in the Kubernetes pod manifest"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Этот текст на русском языке.\nВ нем несколько строк.\nКаждая строка содержит предложение.",
+    "target_position": [1, 5],
+    "action_sequence": [1, 3, 3, 3, 3, 3],
+    "description": "Переместить курсор на слово 'несколько'"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "こんにちは、世界！\nこれは日本語のテキストです。\n複数行があります。",
+    "target_position": [2, 0],
+    "action_sequence": [1, 1],
+    "description": "カーソルを3行目の先頭に移動する"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# 我的待办事项\n- [x] 完成报告\n- [ ] 回复邮件\n- [ ] 参加会议\n- [x] 提交代码",
+    "target_position": [2, 4],
+    "action_sequence": [1, 1, 3, 3, 3, 3],
+    "description": "将光标移动到未完成的\"回复邮件\"任务"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "spring:\n  datasource:\n    url: jdbc:mysql://localhost:3306/mydb\n    username: root\n    password: root\n    driver-class-name: com.mysql.cj.jdbc.Driver",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy the Spring datasource URL and create a new configuration section"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "// GRPC Service definition\nservice UserService {\n  rpc GetUser(GetUserRequest) returns (User) {}\n  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse) {}\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 10],
+    "description": "Copy the GetUser RPC definition and add a new method to the service"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "INSERT INTO users (name, email, created_at)\nVALUES ('John Doe', 'john@example.com', NOW());",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy the SQL INSERT statement and create a new insert"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# 工具函数\ndef 计算总和(数字列表):\n    return sum(数字列表)\n\ndef 计算平均值(数字列表):\n    总和 = sum(数字列表)\n    return 总和 / len(数字列表)",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制计算总和函数并创建新的计算函数"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "public class User {\n    private String id;\n    private String name;\n    private String email;\n    \n    // Getters and setters\n}",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Change the String type to Integer for the id field"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# 环境变量\nDEBUG=true\nLOG_LEVEL=info\nAPP_PORT=3000\nDB_CONNECTION=mysql://localhost/db",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "将DEBUG变量从true改为false"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "Im Sommer ist es warm.\nIm Winter ist es kalt.\nIm Frühling blühen die Blumen.",
+    "action_sequence": [0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Ändern Sie 'warm' zu 'heiß'"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "function processData(data) {\n  // Step 1: Validate input\n  if (!data || !Array.isArray(data)) {\n    throw new Error('Invalid input');\n  }\n  \n  // Step 2: Transform data\n  const transformed = data.map(item => {\n    return { ...item, processed: true };\n  });\n  \n  // Step 3: Return result\n  return transformed;\n}",
+    "target_position": [7, 2],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 3, 3],
+    "description": "Move cursor to the beginning of the data transformation step"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "CREATE TABLE customers (\n    customer_id INT PRIMARY KEY,\n    name VARCHAR(100) NOT NULL,\n    email VARCHAR(100) UNIQUE,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);",
+    "target_position": [3, 4],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3],
+    "description": "Move cursor to the email field definition in the SQL create table statement"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "<template>\n  <div class=\"container\">\n    <h1>{{ title }}</h1>\n    <p>{{ message }}</p>\n    <button @click=\"handleClick\">Click me</button>\n  </div>\n</template>",
+    "target_position": [4, 12],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the click event handler in the Vue.js template"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# 报表生成脚本\n\n## 数据源配置\n数据库: PostgreSQL\n服务器: 192.168.1.100\n端口: 5432\n\n## 报表类型\n- 每日报表\n- 每周报表\n- 每月报表",
+    "target_position": [7, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1],
+    "description": "将光标移动到报表类型标题"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "$ aws s3 ls s3://my-bucket/\n$ aws ec2 describe-instances\n$ aws lambda list-functions\n$ aws cloudformation describe-stacks",
+    "target_position": [2, 1],
+    "action_sequence": [1, 1, 3],
+    "description": "Move cursor to the beginning of the AWS Lambda command"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "test_that(\"addition works\", {\n  expect_equal(2 + 2, 4)\n})\n\ntest_that(\"subtraction works\", {\n  expect_equal(4 - 2, 2)\n})",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 10],
+    "description": "Copy the R test case and create a new test"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "type Person struct {\n\tName    string\n\tAge     int\n\tAddress string\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy the Age field from the Go struct and add a new field"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "Requirejs.config({\n  paths: {\n    jquery: 'libs/jquery-3.6.0',\n    bootstrap: 'libs/bootstrap.min'\n  }\n});",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 10],
+    "description": "Copy a RequireJS path configuration and add a new library path"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "// 错误消息\nconst ERROR_CODE_INVALID_INPUT = 1001;\nconst ERROR_MESSAGE_INVALID_INPUT = '输入无效';\n\nconst ERROR_CODE_SERVER_ERROR = 2001;\nconst ERROR_MESSAGE_SERVER_ERROR = '服务器错误';",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 10],
+    "description": "复制错误代码定义并添加新的错误类型"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const config = {\n  production: false,\n  apiUrl: 'http://localhost:3000',\n  timeout: 30000,\n  maxRetries: 3\n};",
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Change the API URL from HTTP to HTTPS in the configuration"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "<dependency>\n  <groupId>org.springframework</groupId>\n  <artifactId>spring-core</artifactId>\n  <version>5.3.20</version>\n</dependency>",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Update the Spring framework version in the Maven dependency"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# 定时任务配置\n0 0 * * * python /path/to/daily_task.py\n0 0 * * 0 python /path/to/weekly_task.py\n0 0 1 * * python /path/to/monthly_task.py",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改crontab中每日任务的执行路径"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "function calculateTax({ income, taxRate = 0.2, deductions = 0 }) {\n  const taxableIncome = income - deductions;\n  const tax = taxableIncome * taxRate;\n  return tax > 0 ? tax : 0;\n}",
+    "target_position": [0, 28],
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the income parameter in the function's destructured object"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# Data Analysis Report\n\n## Dataset Overview\nThe dataset contains 1000 records with 10 features.\n\n## Methodology\nWe used linear regression to predict the target variable.\n\n## Results\nThe model achieved an R² of 0.85.",
+    "target_position": [7, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1],
+    "description": "Move cursor to the Results section heading"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "module MyModule\n  def self.my_method(param1, param2)\n    result = param1 + param2\n    return result\n  end\nend",
+    "target_position": [2, 4],
+    "action_sequence": [1, 1, 3, 3, 3, 3],
+    "description": "Move cursor to the beginning of the Ruby method implementation"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "## API 端点\n\n### GET /users\n获取所有用户\n\n### POST /users\n创建新用户\n\n### PUT /users/{id}\n更新用户",
+    "target_position": [5, 0],
+    "action_sequence": [1, 1, 1, 1, 1],
+    "description": "将光标移动到POST端点描述"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "if (condition1) {\n  // Do something\n} else if (condition2) {\n  // Do something else\n} else {\n  // Default action\n}",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy the first condition block and add a new condition before the else-if"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "@RestController\n@RequestMapping(\"/api/users\")\npublic class UserController {\n    \n    @GetMapping\n    public List<User> getAllUsers() {\n        // Implementation\n    }\n}",
+    "action_sequence": [4, 4, 4, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 10],
+    "description": "Copy the GetMapping method and create a new endpoint in the Spring controller"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "describe('User component', () => {\n  it('should render user name', () => {\n    // Test implementation\n  });\n});",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 10],
+    "description": "Copy the test case and add another test to the Jest test suite"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# 支持的语言列表\nlanguages:\n  - name: 英语\n    code: en\n  - name: 中文\n    code: zh",
+    "action_sequence": [3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "复制YAML中的语言条目并添加新语言"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "import logging\n\nlogger = logging.getLogger(__name__)\nlogger.setLevel(logging.INFO)\n\nhandler = logging.StreamHandler()\nformatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')\nhandler.setFormatter(formatter)\nlogger.addHandler(handler)",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Change the logger level from INFO to DEBUG"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "div.container {\n  width: 100%;\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 10],
+    "description": "Change the max-width in the CSS container class"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "// 用户权限\nconst USER_ROLE_ADMIN = 'admin';\nconst USER_ROLE_EDITOR = 'editor';\nconst USER_ROLE_VIEWER = 'viewer';",
+    "action_sequence": [1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改编辑者角色名称"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "begin\n  # Some code that might raise an exception\n  result = potentially_dangerous_operation()\n  puts \"Operation completed successfully\"\nrescue StandardError => e\n  puts \"An error occurred: #{e.message}\"\nensure\n  # Code that always runs\n  cleanup_resources()\nend",
+    "target_position": [4, 0],
+    "action_sequence": [1, 1, 1, 1],
+    "description": "Move cursor to the rescue clause in the Ruby exception handling block"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "<form>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" id=\"username\" name=\"username\" />\n  </div>\n  <div class=\"form-group\">\n    <label for=\"password\">Password</label>\n    <input type=\"password\" id=\"password\" name=\"password\" />\n  </div>\n  <button type=\"submit\">Login</button>\n</form>",
+    "target_position": [9, 3],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3],
+    "description": "Move cursor to the submit button in the form"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "Ceci est un exemple de texte en français.\nIl contient plusieurs lignes.\nChaque ligne a son propre contenu.",
+    "target_position": [1, 3],
+    "action_sequence": [1, 3, 3, 3],
+    "description": "Déplacer le curseur au mot 'contient' dans la deuxième ligne"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# 配置信息\n服务器地址: 192.168.1.1\n端口: 8080\n用户名: admin\n密码: ********",
+    "target_position": [3, 4],
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3],
+    "description": "将光标移动到用户名字段"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "enum Status {\n  PENDING,\n  APPROVED,\n  REJECTED\n}",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy an enum value and add a new status"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "- hosts: webservers\n  tasks:\n    - name: Install nginx\n      apt:\n        name: nginx\n        state: present",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy the Ansible task and create a new task in the playbook"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "interface Props {\n  name: string;\n  age: number;\n  isActive: boolean;\n}",
+    "action_sequence": [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy a TypeScript interface property and add a new property"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "pipeline {\n  agent any\n  stages {\n    stage('Build') {\n      steps {\n        sh 'npm install'\n        sh 'npm run build'\n      }\n    }\n  }\n}",
+    "action_sequence": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10],
+    "description": "Copy the Build stage and add a new stage to the Jenkins pipeline"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: nginx-deployment\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: nginx\n  template:\n    metadata:\n      labels:\n        app: nginx\n    spec:\n      containers:\n      - name: nginx\n        image: nginx:1.14.2\n        ports:\n        - containerPort: 80",
+    "action_sequence": [5, 5, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 9, 3, 5, 3, 11, 3, 10],
+    "description": "Change the number of replicas in the Kubernetes Deployment"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "def send_notification(user_id, message, priority='normal'):\n    \"\"\"\n    Send a notification to the specified user.\n    \n    Args:\n        user_id (int): The ID of the user to notify.\n        message (str): The message content.\n        priority (str, optional): The priority level. Defaults to 'normal'.\n    \n    Returns:\n        bool: True if the notification was sent successfully, False otherwise.\n    \"\"\"\n    # Implementation\n    pass",
+    "action_sequence": [1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Update the default priority value in the function docstring"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "// 消息类型\nconst MESSAGE_TYPE_INFO = 'info';\nconst MESSAGE_TYPE_WARNING = 'warning';\nconst MESSAGE_TYPE_ERROR = 'error';\nconst MESSAGE_TYPE_SUCCESS = 'success';",
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "修改成功消息的类型值"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Load data\ndf = pd.read_csv('data.csv')\n\n# Process data\ndf['new_column'] = df['old_column'] * 2\n\n# Visualize data\nplt.figure(figsize=(10, 6))\nplt.plot(df['x'], df['y'])\nplt.title('Data Visualization')\nplt.xlabel('X Axis')\nplt.ylabel('Y Axis')\nplt.show()",
+    "target_position": [11, 0],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    "description": "Move cursor to the matplotlib plot function call"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# Database configuration\nDATABASE = {\n    'ENGINE': 'django.db.backends.postgresql',\n    'NAME': 'mydatabase',\n    'USER': 'mydatabaseuser',\n    'PASSWORD': 'mypassword',\n    'HOST': '127.0.0.1',\n    'PORT': '5432',\n}",
+    "target_position": [4, 11],
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the database username value"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "/* Este es un ejemplo de código CSS */\nbody {\n  font-family: Arial, sans-serif;\n  margin: 0;\n  padding: 0;\n}\n\nheader {\n  background-color: #333;\n  color: white;\n  padding: 20px;\n}",
+    "target_position": [8, 2],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 3, 3],
+    "description": "Mover el cursor al inicio de la regla de color de fondo del encabezado"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# 基本信息\n姓名：张三\n年龄：30\n职业：软件工程师\n\n# 教育背景\n学历：本科\n学校：北京大学\n专业：计算机科学",
+    "target_position": [5, 0],
+    "action_sequence": [1, 1, 1, 1, 1],
+    "description": "将光标移动到教育背景标题"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "describe('Calculator', function() {\n  it('should add two numbers correctly', function() {\n    expect(calculator.add(2, 3)).toEqual(5);\n  });\n  \n  it('should subtract two numbers correctly', function() {\n    expect(calculator.subtract(5, 2)).toEqual(3);\n  });\n});",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Copy a test case and add a new test for multiplication"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "# 系统配置参数\nMAX_CONNECTIONS = 100\nTIMEOUT_SECONDS = 30\nRETRY_COUNT = 3",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 10],
+    "description": "复制系统配置参数并添加新参数"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "def process_file(file_path):\n    with open(file_path, 'r') as f:\n        content = f.read()\n    return content",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 10],
+    "description": "Copy the file processing function and create a new utility function"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "// Cache configuration\nconst CACHE_TTL = 3600; // Time to live in seconds\nconst CACHE_MAX_SIZE = 1000; // Maximum number of items\nconst CACHE_STRATEGY = 'LRU'; // Least Recently Used",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "Change the cache TTL value"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "tasks:\n  - name: Update apt cache\n    apt:\n      update_cache: yes\n  \n  - name: Install required packages\n    apt:\n      name: \"{{ item }}\"\n      state: present\n    with_items:\n      - nginx\n      - postgresql\n      - python3",
+    "action_sequence": [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 9, 3, 3, 3, 3, 3, 3, 5, 0, 0, 0, 0, 0, 0, 11, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Add a new package to the Ansible installation task"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# Flask application settings\nDEBUG = True\nSECRET_KEY = 'development-key'\nDATABASE_URI = 'sqlite:///app.db'",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 9, 3, 3, 3, 3, 5, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 10],
+    "description": "Change the Flask application debug setting"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# 服务监控配置\nMONITORING_ENABLED = True\nMONITORING_INTERVAL = 60  # 秒\nALERT_THRESHOLD = 90  # 百分比",
+    "action_sequence": [1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 5, 3, 3, 11, 3, 3, 10],
+    "description": "修改监控间隔时间"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "export default function Component({ title, description, children }) {\n  return (\n    <div className=\"component\">\n      <h2>{title}</h2>\n      <p>{description}</p>\n      <div className=\"content\">\n        {children}\n      </div>\n    </div>\n  );\n}",
+    "target_position": [6, 8],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3],
+    "description": "Move cursor to the children prop rendering in the React component"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# Logging configuration\nloggers:\n  console:\n    level: info\n    format: '%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %c - %m%n'\n  file:\n    level: debug\n    path: /var/log/application.log\n    maxSize: 100MB\n    maxFiles: 10",
+    "target_position": [8, 4],
+    "action_sequence": [1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3],
+    "description": "Move cursor to the log file maxSize property"
+  },
+  {
+    "task_type": "cursor_navigation",
+    "initial_text": "# 项目路径配置\nBASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\nSTATIC_ROOT = os.path.join(BASE_DIR, 'static')\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nTEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')",
+    "target_position": [3, 0],
+    "action_sequence": [1, 1, 1],
+    "description": "将光标移动到媒体目录配置行"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "// User Actions\nexport const LOGIN_REQUEST = 'LOGIN_REQUEST';\nexport const LOGIN_SUCCESS = 'LOGIN_SUCCESS';\nexport const LOGIN_FAILURE = 'LOGIN_FAILURE';",
+    "action_sequence": [1, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 10],
+    "description": "Copy a Redux action constant and define a new set of actions"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "exceptions:\n  - type: ValidationError\n    status: 400\n    message: \"Validation failed\"",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 10],
+    "description": "Copy the exception configuration and add a new exception type"
+  },
+  {
+    "task_type": "copy_paste",
+    "initial_text": "// 计时器函数\nfunction startTimer(duration, callback) {\n  let timer = duration;\n  const interval = setInterval(() => {\n    timer--;\n    if (timer <= 0) {\n      clearInterval(interval);\n      callback();\n    }\n  }, 1000);\n  return interval;\n}",
+    "action_sequence": [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 10],
+    "description": "复制计时器函数并创建一个新的工具函数"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "# AWS S3 bucket configuration\nBUCKET_NAME = 'my-app-assets'\nREGION = 'us-east-1'\nACCESS_KEY = 'AKIAXXXXXXXXXXXXXXXX'\nSECRET_KEY = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Change the AWS S3 bucket name in the configuration"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "// 分页配置\nconst DEFAULT_PAGE_SIZE = 10;\nconst MAX_PAGE_SIZE = 100;\nconst PAGINATION_VISIBLE_PAGES = 5;",
+    "action_sequence": [1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 9, 3, 3, 5, 3, 3, 11, 3, 3, 10],
+    "description": "修改默认分页大小"
+  },
+  {
+    "task_type": "find_replace",
+    "initial_text": "const routes = [\n  { path: '/', component: Home },\n  { path: '/about', component: About },\n  { path: '/contact', component: Contact },\n  { path: '/products', component: Products }\n];",
+    "action_sequence": [1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 9, 3, 3, 3, 3, 3, 3, 3, 5, 3, 3, 3, 3, 3, 3, 3, 11, 3, 3, 3, 3, 3, 3, 3, 3, 3, 10],
+    "description": "Update the component for the contact route in the router configuration"
+  }
+]
