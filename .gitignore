@@ -2,3 +2,5 @@
 *.pt
 *.pth
 learning_curve.png
+
+runs/*
