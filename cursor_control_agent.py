@@ -179,6 +179,198 @@ class CursorControlHead(nn.Module):
         
         return action_probs, state_values
 
+class ModularCursorControlHead(nn.Module):
+    """
+    模块化光标控制头部网络，功能分离的多头注意力机制
+    """
+    def __init__(self, input_dim=None, hidden_dim=256, num_actions=12):
+        super(ModularCursorControlHead, self).__init__()
+        
+        self.hidden_dim = hidden_dim
+        self.num_actions = num_actions
+        self.input_dim = input_dim  # 可能为None，稍后初始化
+        
+        # 延迟初始化，等待第一次前向传播确定输入维度
+        self.initialized = False
+        
+    def initialize(self, input_dim):
+        """根据输入维度动态初始化网络"""
+        self.input_dim = input_dim
+        print(f"初始化ModularCursorControlHead，输入维度: {input_dim}，隐藏维度: {self.hidden_dim}")
+        
+        # 输入投影
+        self.input_proj = nn.Linear(input_dim, self.hidden_dim)
+        nn.init.xavier_normal_(self.input_proj.weight, gain=0.01)
+        
+        # 1. 文本理解模块 - 理解文本内容和结构 (8头)
+        self.understanding_attention = nn.MultiheadAttention(
+            self.hidden_dim, num_heads=8, batch_first=True
+        )
+        
+        # 2. 空间感知模块 - 处理光标位置和文本布局 (8头)
+        self.spatial_attention = nn.MultiheadAttention(
+            self.hidden_dim, num_heads=8, batch_first=True
+        )
+        
+        # 3. 操作规划模块 - 计划复杂操作如复制粘贴 (8头)
+        self.planning_attention = nn.MultiheadAttention(
+            self.hidden_dim, num_heads=8, batch_first=True
+        )
+        
+        # 4. 执行控制模块 - 最终决定具体动作 (8头)
+        self.control_attention = nn.MultiheadAttention(
+            self.hidden_dim, num_heads=8, batch_first=True
+        )
+        
+        # 模块间转换层
+        self.understanding_to_spatial = nn.Linear(self.hidden_dim, self.hidden_dim)
+        nn.init.xavier_normal_(self.understanding_to_spatial.weight, gain=0.01)
+        
+        self.spatial_to_planning = nn.Linear(self.hidden_dim, self.hidden_dim)
+        nn.init.xavier_normal_(self.spatial_to_planning.weight, gain=0.01)
+        
+        self.planning_to_control = nn.Linear(self.hidden_dim, self.hidden_dim)
+        nn.init.xavier_normal_(self.planning_to_control.weight, gain=0.01)
+        
+        # 每个模块的前馈网络
+        self.understanding_ff = nn.Sequential(
+            nn.Linear(self.hidden_dim, self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim, self.hidden_dim)
+        )
+        
+        self.spatial_ff = nn.Sequential(
+            nn.Linear(self.hidden_dim, self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim, self.hidden_dim)
+        )
+        
+        self.planning_ff = nn.Sequential(
+            nn.Linear(self.hidden_dim, self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim, self.hidden_dim)
+        )
+        
+        self.control_ff = nn.Sequential(
+            nn.Linear(self.hidden_dim, self.hidden_dim),
+            nn.ReLU(),
+            nn.Linear(self.hidden_dim, self.hidden_dim)
+        )
+        
+        # 层归一化
+        self.norm_u1 = nn.LayerNorm(self.hidden_dim)
+        self.norm_u2 = nn.LayerNorm(self.hidden_dim)
+        self.norm_s1 = nn.LayerNorm(self.hidden_dim)
+        self.norm_s2 = nn.LayerNorm(self.hidden_dim)
+        self.norm_p1 = nn.LayerNorm(self.hidden_dim)
+        self.norm_p2 = nn.LayerNorm(self.hidden_dim)
+        self.norm_c1 = nn.LayerNorm(self.hidden_dim)
+        self.norm_c2 = nn.LayerNorm(self.hidden_dim)
+        
+        # 输出头
+        self.action_head = nn.Linear(self.hidden_dim, self.num_actions)
+        nn.init.xavier_normal_(self.action_head.weight, gain=0.01)
+        
+        self.value_head = nn.Linear(self.hidden_dim, 1)
+        nn.init.xavier_normal_(self.value_head.weight, gain=0.01)
+        
+        self.initialized = True
+        
+    def forward(self, x):
+        # 检查是否初始化，如果没有，使用输入的维度初始化模型
+        if not self.initialized:
+            self.initialize(x.size(-1))
+            # 将网络移动到与输入相同的设备
+            device = x.device
+            self.to(device)
+        
+        # 检查输入是否包含NaN
+        if torch.isnan(x).any():
+            print("警告: ModularCursorControlHead输入包含NaN，将替换为零")
+            x = torch.where(torch.isnan(x), torch.zeros_like(x), x)
+        
+        # 投影到隐藏维度
+        hidden = self.input_proj(x)
+        
+        # 把特征展开为序列形式以便注意力处理
+        if len(hidden.shape) == 2:
+            hidden = hidden.unsqueeze(1)  # 添加序列维度
+        
+        # 1. 文本理解模块处理
+        try:
+            understanding_attn, _ = self.understanding_attention(hidden, hidden, hidden)
+            understanding = self.norm_u1(hidden + understanding_attn)
+            understanding_ff = self.understanding_ff(understanding)
+            understanding = self.norm_u2(understanding + understanding_ff)
+        except Exception as e:
+            print(f"文本理解模块出错: {e}")
+            understanding = self.norm_u2(hidden)  # 跳过出错的模块
+            
+        # 2. 空间感知模块处理
+        try:
+            spatial_in = self.understanding_to_spatial(understanding)
+            spatial_attn, _ = self.spatial_attention(spatial_in, spatial_in, spatial_in)
+            spatial = self.norm_s1(spatial_in + spatial_attn)
+            spatial_ff = self.spatial_ff(spatial)
+            spatial = self.norm_s2(spatial + spatial_ff)
+        except Exception as e:
+            print(f"空间感知模块出错: {e}")
+            spatial = self.norm_s2(understanding)  # 使用前一模块输出
+            
+        # 3. 操作规划模块处理
+        try:
+            planning_in = self.spatial_to_planning(spatial)
+            planning_attn, _ = self.planning_attention(planning_in, planning_in, planning_in)
+            planning = self.norm_p1(planning_in + planning_attn)
+            planning_ff = self.planning_ff(planning)
+            planning = self.norm_p2(planning + planning_ff)
+        except Exception as e:
+            print(f"操作规划模块出错: {e}")
+            planning = self.norm_p2(spatial)  # 使用前一模块输出
+            
+        # 4. 执行控制模块处理
+        try:
+            control_in = self.planning_to_control(planning)
+            control_attn, _ = self.control_attention(control_in, control_in, control_in)
+            control = self.norm_c1(control_in + control_attn)
+            control_ff = self.control_ff(control)
+            control = self.norm_c2(control + control_ff)
+        except Exception as e:
+            print(f"执行控制模块出错: {e}")
+            control = self.norm_c2(planning)  # 使用前一模块输出
+            
+        # 挤压序列维度
+        if control.size(1) == 1:
+            control = control.squeeze(1)
+        
+        # 输出层 - 动作概率
+        action_logits = self.action_head(control)
+        
+        # 更稳定的softmax - 首先减去最大值
+        max_logits = torch.max(action_logits, dim=-1, keepdim=True)[0]
+        action_logits_stable = action_logits - max_logits
+        
+        # 使用更稳健的softmax方法
+        exp_logits = torch.exp(action_logits_stable)
+        exp_sum = torch.sum(exp_logits, dim=-1, keepdim=True)
+        exp_sum = torch.clamp(exp_sum, min=1e-10)  # 避免除以零
+        action_probs = exp_logits / exp_sum
+        
+        # 再次检查和清理NaN
+        if torch.isnan(action_probs).any():
+            print("警告: 动作概率包含NaN，将使用均匀分布")
+            action_probs = torch.ones_like(action_probs) / self.num_actions
+        
+        # 状态值估计
+        state_values = self.value_head(control)
+        
+        # 检查状态值是否为NaN
+        if torch.isnan(state_values).any():
+            print("警告: 状态值包含NaN，将替换为零")
+            state_values = torch.zeros_like(state_values)
+        
+        return action_probs, state_values
+
 
 class GPT2TextEncoder:
     """
@@ -337,7 +529,8 @@ class PPOAgent:
         input_dim = text_embedding_dim + 2 + 3  # 文本嵌入 + 光标(x,y) + 任务类型(one-hot)
         
         # 使用新的基于注意力的CursorControlHead
-        self.policy = CursorControlHead(
+        # self.policy = CursorControlHead(
+        self.policy = ModularCursorControlHead(
             input_dim=input_dim, 
             hidden_dim=hidden_dim, 
             num_actions=self.num_actions,
@@ -761,7 +954,8 @@ class GRPOAgent:
         
         # 初始化策略网络
         # 不再在初始化时指定input_dim，让模型动态调整
-        self.policy = CursorControlHead(
+        # self.policy = CursorControlHead(
+        self.policy = ModularCursorControlHead(
             input_dim=None,  # 稍后根据第一个样本动态确定
             hidden_dim=hidden_dim,
             num_actions=self.num_actions
